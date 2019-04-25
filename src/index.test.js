@@ -43,3 +43,19 @@ it("warns unitless flex-basis of any number", async () => {
 it("passes well-formed flex", async () => {
   return check("a{flex: 1   0  0px  ;}");
 });
+
+it("warns flex-grow", async () => {
+  return check("a{flex-grow: 1;}");
+});
+
+it("warns flex-shrink", async () => {
+  return check("a{flex-shrink: 1;}");
+});
+
+it("warns flex-basis", async () => {
+  return check("a{flex-basis: 1;}");
+});
+
+it("does not warn any other flex-*", async () => {
+  return check("a{flex-direction: row;}");
+});
