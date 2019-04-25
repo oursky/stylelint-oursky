@@ -28,7 +28,8 @@ module.exports = stylelint.createPlugin(ruleName, function() {
           node
         });
       } else {
-        if (Number(values[2]) === 0) {
+        var flexBasis = Number(values[2]);
+        if (!isNaN(flexBasis)) {
           stylelint.utils.report({
             ruleName,
             result: postcssResult,
