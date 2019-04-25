@@ -21,9 +21,6 @@ module.exports = stylelint.createPlugin(ruleName, function() {
     postcssRoot.walkDecls("flex", node => {
       var values = postcss.list.space(node.value);
       if (values.length !== 3) {
-        if (values.length === 1 && values[0] === "none") {
-          return;
-        }
         stylelint.utils.report({
           ruleName,
           result: postcssResult,
