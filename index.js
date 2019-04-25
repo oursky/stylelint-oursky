@@ -1,7 +1,7 @@
-const stylelint = require("stylelint");
+var stylelint = require("stylelint");
 
-const ruleName = "oursky/flex";
-const messages = stylelint.utils.ruleMessages(ruleName, {
+var ruleName = "oursky/flex";
+var messages = stylelint.utils.ruleMessages(ruleName, {
   fullShorthand: () => `Expected flex: <flex-grow> <flex-shrink> <flex-basis>;`,
   flexBasisUnit: value =>
     `flex-basis value: ${value} not allowed, please include unit`
@@ -9,7 +9,7 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 
 module.exports = stylelint.createPlugin(ruleName, function() {
   return function(postcssRoot, postcssResult) {
-    const validOptions = stylelint.utils.validateOptions(
+    var validOptions = stylelint.utils.validateOptions(
       postcssResult,
       ruleName,
       {}
@@ -18,7 +18,7 @@ module.exports = stylelint.createPlugin(ruleName, function() {
       return;
     }
     postcssRoot.walkDecls("flex", node => {
-      const values = node.value.split(" ");
+      var values = node.value.split(" ");
       if (values.length !== 3) {
         if (values.length === 1 && values[0] === "none") {
           return;
