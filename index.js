@@ -3,9 +3,9 @@ var postcss = require("postcss");
 
 var ruleName = "oursky/flex";
 var messages = stylelint.utils.ruleMessages(ruleName, {
-  fullShorthand: () => `Expected flex: <flex-grow> <flex-shrink> <flex-basis>;`,
+  fullShorthand: () => `Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>;`,
   flexBasisUnit: value =>
-    `flex-basis value: ${value} not allowed, please include unit`
+    `flex-basis: ${value} not allowed. Please include unit.`
 });
 
 module.exports = stylelint.createPlugin(ruleName, function() {
