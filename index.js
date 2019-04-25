@@ -1,6 +1,6 @@
 const stylelint = require("stylelint");
 
-const ruleName = "plugin/ie-flex";
+const ruleName = "oursky/flex";
 const messages = stylelint.utils.ruleMessages(ruleName, {
   mustIncludeAllValue: () => `Expected flex: flex-grow flex-shrink flex-basis;`,
   flexBasisValueNotAllowed: value =>
