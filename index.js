@@ -1,4 +1,5 @@
 var stylelint = require("stylelint");
+var postcss = require("postcss");
 
 var ruleName = "oursky/flex";
 var messages = stylelint.utils.ruleMessages(ruleName, {
@@ -18,7 +19,7 @@ module.exports = stylelint.createPlugin(ruleName, function() {
       return;
     }
     postcssRoot.walkDecls("flex", node => {
-      var values = node.value.split(" ");
+      var values = postcss.list.space(node.value);
       if (values.length !== 3) {
         if (values.length === 1 && values[0] === "none") {
           return;
