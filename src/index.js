@@ -3,10 +3,9 @@ var postcss = require("postcss");
 
 var ruleName = "oursky/flex";
 var messages = stylelint.utils.ruleMessages(ruleName, {
-  fullShorthand: () => `Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>;`,
   flexBasisUnit: value =>
     `flex-basis: ${value} not allowed. Please include unit.`,
-  useShorthand: () => "Individual flex-[grow|shrink|basis] is not allowed. Use flex."
+  noShorthand: () => "flex shorthand is not allowed. Write flex-[grow|shrink|basis] individually.",
 });
 
 module.exports = stylelint.createPlugin(ruleName, function() {
@@ -21,32 +20,22 @@ module.exports = stylelint.createPlugin(ruleName, function() {
     }
     postcssRoot.walkDecls(/^flex/, node => {
       if (node.prop === "flex") {
-        var values = postcss.list.space(node.value);
-        if (values.length !== 3) {
-          stylelint.utils.report({
-            ruleName,
-            result: postcssResult,
-            message: messages.fullShorthand(),
-            node
-          });
-        } else {
-          var flexBasis = Number(values[2]);
-          if (!isNaN(flexBasis)) {
-            stylelint.utils.report({
-              ruleName,
-              result: postcssResult,
-              message: messages.flexBasisUnit(values[2]),
-              node
-            });
-          }
-        }
-      } else if (node.prop === "flex-grow" || node.prop === "flex-shrink" || node.prop === "flex-basis") {
         stylelint.utils.report({
           ruleName,
           result: postcssResult,
-          message: messages.useShorthand(),
-          node
+          message: messages.noShorthand(),
+          node,
         });
+      } else if (node.prop === "flex-basis") {
+        var flexBasis = Number(node.value);
+        if (!isNaN(flexBasis)) {
+          stylelint.utils.report({
+            ruleName,
+            result: postcssResult,
+            message: messages.flexBasisUnit(node.value),
+            node
+          });
+        }
       }
     });
   };

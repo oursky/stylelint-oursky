@@ -1,21 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`does not warn any other flex-* 1`] = `"[{\\"source\\":\\"<input css 10>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"warnings\\":[]}]"`;
+exports[`allows flex-basis with unit 1`] = `"[{\\"source\\":\\"<input css 5>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"warnings\\":[]}]"`;
 
-exports[`handles spaces 1`] = `"[{\\"source\\":\\"<input css 3>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)\\"}]}]"`;
+exports[`does not warn any other flex-* 1`] = `"[{\\"source\\":\\"<input css 6>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"warnings\\":[]}]"`;
 
-exports[`passes well-formed flex 1`] = `"[{\\"source\\":\\"<input css 6>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"warnings\\":[]}]"`;
+exports[`warns 1-value forms 1`] = `"[{\\"source\\":\\"<input css 1>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"flex shorthand is not allowed. Write flex-[grow|shrink|basis] individually. (oursky/flex)\\"}]}]"`;
 
-exports[`warns 1-value forms 1`] = `"[{\\"source\\":\\"<input css 1>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)\\"}]}]"`;
+exports[`warns 2-value forms 1`] = `"[{\\"source\\":\\"<input css 2>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"flex shorthand is not allowed. Write flex-[grow|shrink|basis] individually. (oursky/flex)\\"}]}]"`;
 
-exports[`warns 2-value forms 1`] = `"[{\\"source\\":\\"<input css 2>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)\\"}]}]"`;
+exports[`warns 3-value forms 1`] = `"[{\\"source\\":\\"<input css 3>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"flex shorthand is not allowed. Write flex-[grow|shrink|basis] individually. (oursky/flex)\\"}]}]"`;
 
-exports[`warns flex-basis 1`] = `"[{\\"source\\":\\"<input css 9>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"Individual flex-[grow|shrink|basis] is not allowed. Use flex. (oursky/flex)\\"}]}]"`;
-
-exports[`warns flex-grow 1`] = `"[{\\"source\\":\\"<input css 7>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"Individual flex-[grow|shrink|basis] is not allowed. Use flex. (oursky/flex)\\"}]}]"`;
-
-exports[`warns flex-shrink 1`] = `"[{\\"source\\":\\"<input css 8>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"Individual flex-[grow|shrink|basis] is not allowed. Use flex. (oursky/flex)\\"}]}]"`;
-
-exports[`warns unitless flex-basis 1`] = `"[{\\"source\\":\\"<input css 4>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"flex-basis: 0 not allowed. Please include unit. (oursky/flex)\\"}]}]"`;
-
-exports[`warns unitless flex-basis of any number 1`] = `"[{\\"source\\":\\"<input css 5>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"flex-basis: 1 not allowed. Please include unit. (oursky/flex)\\"}]}]"`;
+exports[`warns flex-basis without unit 1`] = `"[{\\"source\\":\\"<input css 4>\\",\\"deprecations\\":[],\\"invalidOptionWarnings\\":[],\\"parseErrors\\":[],\\"errored\\":true,\\"warnings\\":[{\\"line\\":1,\\"column\\":3,\\"rule\\":\\"oursky/flex\\",\\"severity\\":\\"error\\",\\"text\\":\\"flex-basis: 1 not allowed. Please include unit. (oursky/flex)\\"}]}]"`;
