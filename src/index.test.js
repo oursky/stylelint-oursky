@@ -28,16 +28,32 @@ it("warns 2-value forms", async () => {
   return check("a{flex: 1 0;}");
 });
 
-it("warns 3-value forms", async () => {
-  return check("a{flex: 1 0 0px;}");
+it("handles spaces", async () => {
+  return check("a{flex: 1   0    ;}");
 });
 
-it("warns flex-basis without unit", async () => {
+it("warns unitless flex-basis", async () => {
+  return check("a{flex: 1   0  0  ;}");
+});
+
+it("warns unitless flex-basis of any number", async () => {
+  return check("a{flex: 1   0  1  ;}");
+});
+
+it("passes well-formed flex", async () => {
+  return check("a{flex: 1   0  0px  ;}");
+});
+
+it("warns flex-grow", async () => {
+  return check("a{flex-grow: 1;}");
+});
+
+it("warns flex-shrink", async () => {
+  return check("a{flex-shrink: 1;}");
+});
+
+it("warns flex-basis", async () => {
   return check("a{flex-basis: 1;}");
-});
-
-it("allows flex-basis with unit", async () => {
-  return check("a{flex-basis: 1px;}");
 });
 
 it("does not warn any other flex-*", async () => {
