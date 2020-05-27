@@ -9,13 +9,13 @@
     "test": "jest"
   },
   "dependencies": {
-    "postcss": ">=7.0.0"
+    "postcss": "^7.0.31"
   },
   "peerDependencies": {
-    "stylelint": ">=9.0.0"
+    "stylelint": "^13.0.0"
   },
   "devDependencies": {
-    "jest": "^24.7.1",
-    "stylelint": ">=9.0.0"
+    "jest": "^26.0.0",
+    "stylelint": "^13.0.0"
   }
 }
