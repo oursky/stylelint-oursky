@@ -3,14 +3,16 @@ var postcss = require("postcss");
 
 var ruleName = "oursky/flex";
 var messages = stylelint.utils.ruleMessages(ruleName, {
-  fullShorthand: () => `Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>;`,
-  flexBasisUnit: value =>
+  fullShorthand: () =>
+    `Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>;`,
+  flexBasisUnit: (value) =>
     `flex-basis: ${value} not allowed. Please include unit.`,
-  useShorthand: () => "flex-[grow|shrink|basis] are not supported on IE 10. Use flex."
+  useShorthand: () =>
+    "flex-[grow|shrink|basis] are not supported on IE 10. Use flex.",
 });
 
-module.exports = stylelint.createPlugin(ruleName, function() {
-  return function(postcssRoot, postcssResult) {
+module.exports = stylelint.createPlugin(ruleName, function () {
+  return function (postcssRoot, postcssResult) {
     var validOptions = stylelint.utils.validateOptions(
       postcssResult,
       ruleName,
@@ -19,7 +21,7 @@ module.exports = stylelint.createPlugin(ruleName, function() {
     if (!validOptions) {
       return;
     }
-    postcssRoot.walkDecls(/^flex/, node => {
+    postcssRoot.walkDecls(/^flex/, (node) => {
       if (node.prop === "flex") {
         var values = postcss.list.space(node.value);
         if (values.length !== 3) {
@@ -27,7 +29,7 @@ module.exports = stylelint.createPlugin(ruleName, function() {
             ruleName,
             result: postcssResult,
             message: messages.fullShorthand(),
-            node
+            node,
           });
         } else {
           var flexBasis = Number(values[2]);
@@ -36,16 +38,20 @@ module.exports = stylelint.createPlugin(ruleName, function() {
               ruleName,
               result: postcssResult,
               message: messages.flexBasisUnit(values[2]),
-              node
+              node,
             });
           }
         }
-      } else if (node.prop === "flex-grow" || node.prop === "flex-shrink" || node.prop === "flex-basis") {
+      } else if (
+        node.prop === "flex-grow" ||
+        node.prop === "flex-shrink" ||
+        node.prop === "flex-basis"
+      ) {
         stylelint.utils.report({
           ruleName,
           result: postcssResult,
           message: messages.useShorthand(),
-          node
+          node,
         });
       }
     });

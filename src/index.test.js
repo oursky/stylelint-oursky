@@ -2,22 +2,24 @@ var stylelint = require("stylelint");
 var path = require("path");
 
 function lint(code) {
-  return stylelint.lint({
-    code,
-    formatter: "json",
-    config: {
-      plugins: [path.join(__dirname, "./index.js")],
-      rules: {
-        "oursky/flex": "error",
+  return stylelint
+    .lint({
+      code,
+      formatter: "json",
+      config: {
+        plugins: [path.join(__dirname, "./index.js")],
+        rules: {
+          "oursky/flex": "error",
+        },
       },
-    },
-  }).then((result) => {
-    return result.output;
-  });
+    })
+    .then((result) => {
+      return result.output;
+    });
 }
 
 function check(code) {
-  return lint(code).then(output => expect(output).toMatchSnapshot());
+  return lint(code).then((output) => expect(output).toMatchSnapshot());
 }
 
 it("warns 1-value forms", async () => {
