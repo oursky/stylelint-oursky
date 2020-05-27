@@ -19,6 +19,7 @@
   "devDependencies": {
     "jest": "^26.0.0",
     "prettier": "2.0.5",
-    "stylelint": "^13.0.0"
+    "stylelint": "^13.0.0",
+    "stylelint-no-unsupported-browser-features": "4.0.0"
   }
 }
