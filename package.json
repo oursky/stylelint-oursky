@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "postcss": "^7.0.32",
-    "stylelint-no-unsupported-browser-features": "4.0.0"
+    "stylelint-no-unsupported-browser-features": "4.1.4"
   },
   "peerDependencies": {
     "stylelint": "^13.6.1"
