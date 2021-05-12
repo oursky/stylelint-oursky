@@ -11,7 +11,7 @@
     "format": "prettier --write --list-different 'src/**/*.{js,jsx,ts,tsx}' 'config/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.10",
     "stylelint-no-unsupported-browser-features": "4.1.4"
   },
   "peerDependencies": {
