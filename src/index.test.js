@@ -14,7 +14,14 @@ function lint(code) {
       },
     })
     .then((result) => {
-      return result.output;
+      // The source property is random.
+      // So we want to remove it to make the snapshot stable.
+      const outputString = result.output;
+      const output = JSON.parse(outputString);
+      for (const a of output) {
+        a.source = "";
+      }
+      return JSON.stringify(output);
     });
 }
 
