@@ -1,4 +1,5 @@
 alpha-value-notation
+annotation-no-unknown
 at-rule-allowed-list
 at-rule-disallowed-list
 at-rule-empty-line-before
@@ -81,8 +82,11 @@ function-url-scheme-allowed-list
 function-url-scheme-disallowed-list
 function-whitespace-after
 hue-degree-notation
+import-notation
 indentation
+keyframe-block-no-duplicate-selectors
 keyframe-declaration-no-important
+keyframe-selector-notation
 keyframes-name-pattern
 length-zero-no-unit
 linebreaks
@@ -98,6 +102,7 @@ media-feature-name-no-unknown
 media-feature-name-no-vendor-prefix
 media-feature-name-value-allowed-list
 media-feature-parentheses-space-inside
+media-feature-range-notation
 media-feature-range-operator-space-after
 media-feature-range-operator-space-before
 media-query-list-comma-newline-after
@@ -159,6 +164,7 @@ selector-max-universal
 selector-nested-pattern
 selector-no-qualifying-type
 selector-no-vendor-prefix
+selector-not-notation
 selector-pseudo-class-allowed-list
 selector-pseudo-class-case
 selector-pseudo-class-disallowed-list
