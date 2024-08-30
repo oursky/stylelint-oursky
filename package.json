@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "format": "prettier --write --list-different 'src/**/*.{js,jsx,ts,tsx}' 'config/**/*.{js,jsx,ts,tsx}'"
+    "format": "prettier --write --list-different 'src/**/*.mjs' 'config/**/*.mjs'"
   },
   "dependencies": {
     "postcss": "^8.4.20",
