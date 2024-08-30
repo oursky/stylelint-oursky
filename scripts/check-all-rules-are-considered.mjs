@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 function setDifference(a, b) {
   const diffArr = [...a].filter((element) => !b.has(element));
@@ -12,7 +12,9 @@ function setDifference(a, b) {
   const content = fs.readFileSync("rules/stylelint", { encoding: "utf8" });
   const allRules = content.split("\n").filter((line) => line !== "");
 
-  const consideredRules = Object.keys(require("../config/stylelint").rules);
+  const mod = await import("../config/stylelint.mjs");
+
+  const consideredRules = Object.keys(mod.default.rules);
 
   const allRulesSet = new Set(allRules);
   const consideredRulesSet = new Set(consideredRules);
