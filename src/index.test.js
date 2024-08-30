@@ -1,32 +1,35 @@
-var stylelint = require("stylelint");
-var path = require("path");
+import stylelint from "stylelint";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
-function lint(code) {
-  return stylelint
-    .lint({
-      code,
-      formatter: "json",
-      config: {
-        plugins: [path.join(__dirname, "./index.js")],
-        rules: {
-          "oursky/flex": "error",
-        },
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+async function lint(code) {
+  const result = await stylelint.lint({
+    code,
+    formatter: "json",
+    config: {
+      plugins: [join(__dirname, "./index.mjs")],
+      rules: {
+        "oursky/flex": "error",
       },
-    })
-    .then((result) => {
-      // The source property is random.
-      // So we want to remove it to make the snapshot stable.
-      const outputString = result.output;
-      const output = JSON.parse(outputString);
-      for (const a of output) {
-        a.source = "";
-      }
-      return JSON.stringify(output);
-    });
+    },
+  });
+
+  const report = JSON.parse(result.report);
+  const reportWithoutSource = report.map((a) => {
+    return {
+      ...a,
+      source: undefined,
+    };
+  });
+  return JSON.stringify(reportWithoutSource);
 }
 
-function check(code) {
-  return lint(code).then((output) => expect(output).toMatchSnapshot());
+async function check(code) {
+  const output = await lint(code);
+  expect(output).toMatchSnapshot();
 }
 
 it("warns 1-value forms", async () => {

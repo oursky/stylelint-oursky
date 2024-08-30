@@ -1,8 +1,9 @@
-var stylelint = require("stylelint");
-var postcss = require("postcss");
+import stylelint from "stylelint";
+import postcss from "postcss";
 
-var ruleName = "oursky/flex";
-var messages = stylelint.utils.ruleMessages(ruleName, {
+const ruleName = "oursky/flex";
+
+const messages = stylelint.utils.ruleMessages(ruleName, {
   fullShorthand: () =>
     `Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>;`,
   flexBasisUnit: (value) =>
@@ -11,7 +12,7 @@ var messages = stylelint.utils.ruleMessages(ruleName, {
     "flex-[grow|shrink|basis] are not supported on IE 10. Use flex.",
 });
 
-module.exports = stylelint.createPlugin(ruleName, function () {
+const ruleFunction = () => {
   return function (postcssRoot, postcssResult) {
     var validOptions = stylelint.utils.validateOptions(
       postcssResult,
@@ -56,7 +57,9 @@ module.exports = stylelint.createPlugin(ruleName, function () {
       }
     });
   };
-});
+};
 
-module.exports.ruleName = ruleName;
-module.exports.messages = messages;
+ruleFunction.ruleName = ruleName;
+ruleFunction.messages = messages;
+
+export default stylelint.createPlugin(ruleName, ruleFunction);

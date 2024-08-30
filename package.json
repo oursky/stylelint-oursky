@@ -1,25 +1,27 @@
 {
   "name": "@oursky/stylelint-oursky",
   "version": "4.0.0",
-  "main": "src/index.js",
+  "type": "module",
+  "module": "src/index.mjs",
   "files": [
-    "src/index.js",
+    "src/index.mjs",
     "config"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "format": "prettier --write --list-different 'src/**/*.{js,jsx,ts,tsx}' 'config/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "postcss": "^8.4.20",
-    "stylelint-no-unsupported-browser-features": "6.0.1"
+    "stylelint-no-unsupported-browser-features": "^8.0.1"
   },
   "peerDependencies": {
-    "stylelint": "^14.16.0"
+    "caniuse-lite": "^1.0.30001653",
+    "stylelint": "^16.9.0"
   },
   "devDependencies": {
     "jest": "29.3.1",
     "prettier": "2.8.1",
-    "stylelint": "^14.16.0"
+    "stylelint": "^16.9.0"
   }
 }

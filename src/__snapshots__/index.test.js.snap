@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`does not warn any other flex-* 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":false,"warnings":[]}]"`;
+exports[`does not warn any other flex-* 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":false,"warnings":[]}]"`;
 
-exports[`handles spaces 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":19,"rule":"oursky/flex","severity":"error","text":"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)"}]}]"`;
+exports[`handles spaces 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":19,"rule":"oursky/flex","severity":"error","text":"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)"}]}]"`;
 
-exports[`passes well-formed flex 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":false,"warnings":[]}]"`;
+exports[`passes well-formed flex 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":false,"warnings":[]}]"`;
 
-exports[`warns 1-value forms 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":11,"rule":"oursky/flex","severity":"error","text":"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)"}]}]"`;
+exports[`warns 1-value forms 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":11,"rule":"oursky/flex","severity":"error","text":"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)"}]}]"`;
 
-exports[`warns 2-value forms 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":13,"rule":"oursky/flex","severity":"error","text":"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)"}]}]"`;
+exports[`warns 2-value forms 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":13,"rule":"oursky/flex","severity":"error","text":"Expected 3-values form of flex: <flex-grow> <flex-shrink> <flex-basis>; (oursky/flex)"}]}]"`;
 
-exports[`warns flex-basis 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":17,"rule":"oursky/flex","severity":"error","text":"flex-[grow|shrink|basis] are not supported on IE 10. Use flex. (oursky/flex)"}]}]"`;
+exports[`warns flex-basis 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":17,"rule":"oursky/flex","severity":"error","text":"flex-[grow|shrink|basis] are not supported on IE 10. Use flex. (oursky/flex)"}]}]"`;
 
-exports[`warns flex-grow 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":16,"rule":"oursky/flex","severity":"error","text":"flex-[grow|shrink|basis] are not supported on IE 10. Use flex. (oursky/flex)"}]}]"`;
+exports[`warns flex-grow 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":16,"rule":"oursky/flex","severity":"error","text":"flex-[grow|shrink|basis] are not supported on IE 10. Use flex. (oursky/flex)"}]}]"`;
 
-exports[`warns flex-shrink 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":18,"rule":"oursky/flex","severity":"error","text":"flex-[grow|shrink|basis] are not supported on IE 10. Use flex. (oursky/flex)"}]}]"`;
+exports[`warns flex-shrink 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":18,"rule":"oursky/flex","severity":"error","text":"flex-[grow|shrink|basis] are not supported on IE 10. Use flex. (oursky/flex)"}]}]"`;
 
-exports[`warns unitless flex-basis 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":20,"rule":"oursky/flex","severity":"error","text":"flex-basis: 0 not allowed. Please include unit. (oursky/flex)"}]}]"`;
+exports[`warns unitless flex-basis 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":20,"rule":"oursky/flex","severity":"error","text":"flex-basis: 0 not allowed. Please include unit. (oursky/flex)"}]}]"`;
 
-exports[`warns unitless flex-basis of any number 1`] = `"[{"source":"","deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":20,"rule":"oursky/flex","severity":"error","text":"flex-basis: 1 not allowed. Please include unit. (oursky/flex)"}]}]"`;
+exports[`warns unitless flex-basis of any number 1`] = `"[{"deprecations":[],"invalidOptionWarnings":[],"parseErrors":[],"errored":true,"warnings":[{"line":1,"column":3,"endLine":1,"endColumn":20,"rule":"oursky/flex","severity":"error","text":"flex-basis: 1 not allowed. Please include unit. (oursky/flex)"}]}]"`;

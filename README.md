@@ -3,7 +3,7 @@
 ## Installation
 
 ```sh
-npm install --save --save-exact --save-dev @oursky/stylelint-oursky stylelint@^13
+npm install --save --save-exact --save-dev @oursky/stylelint-oursky stylelint@^16 caniuse-lite@^1
 ```
 
 ## Usage
@@ -12,7 +12,7 @@ In your `.stylelintrc`
 
 ```json
 {
-  "extends": ["@oursky/stylelint-oursky/config/oursky"]
+  "extends": ["./node_modules/@oursky/stylelint-oursky/config/oursky.mjs"]
 }
 ```
 
