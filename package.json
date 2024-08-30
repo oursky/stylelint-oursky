@@ -1,6 +1,6 @@
 {
   "name": "@oursky/stylelint-oursky",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "type": "module",
   "module": "src/index.mjs",
   "files": [
