@@ -10,10 +10,7 @@ async function lint(code) {
     code,
     formatter: "json",
     config: {
-      plugins: [join(__dirname, "./index.mjs")],
-      rules: {
-        "oursky/flex": "error",
-      },
+      extends: [join(__dirname, "../config/oursky.mjs")],
     },
   });
 
