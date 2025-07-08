@@ -12,17 +12,17 @@
     "format": "prettier --write --list-different 'src/**/*.mjs' 'config/**/*.mjs'"
   },
   "dependencies": {
-    "postcss": "^8.4.20",
-    "stylelint-no-unsupported-browser-features": "^8.0.1"
+    "postcss": "^8.5.6",
+    "stylelint-no-unsupported-browser-features": "^8.0.4"
   },
   "peerDependencies": {
-    "caniuse-lite": "^1.0.30001653",
-    "stylelint": "^16.9.0"
+    "caniuse-lite": "^1.0.30001727",
+    "stylelint": "^16.21.1"
   },
   "devDependencies": {
-    "caniuse-lite": "^1.0.30001653",
-    "jest": "^29.3.1",
-    "prettier": "^2.8.1",
-    "stylelint": "^16.9.0"
+    "caniuse-lite": "^1.0.30001727",
+    "jest": "^29.7.0",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.21.1"
   }
 }
