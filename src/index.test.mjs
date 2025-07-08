@@ -61,8 +61,12 @@ it("warns flex-shrink", async () => {
   return check("a{flex-shrink: 1;}");
 });
 
-it("warns flex-basis", async () => {
+it("warns flex-basis: 1", async () => {
   return check("a{flex-basis: 1;}");
+});
+
+it("do not warn flex-basis: 0", async () => {
+  return check("a{flex-basis: 0;}");
 });
 
 it("does not warn any other flex-*", async () => {

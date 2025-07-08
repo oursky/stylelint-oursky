@@ -17,7 +17,7 @@ const ruleFunction = () => {
     var validOptions = stylelint.utils.validateOptions(
       postcssResult,
       ruleName,
-      {}
+      {},
     );
     if (!validOptions) {
       return;
